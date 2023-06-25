@@ -59,3 +59,9 @@ You are required to submit BOTH of the following for review:
 - The URL of the functional, deployed application.
 
 - The URL of the GitHub repository, with a unique name and a readme describing the project.
+
+## ScreenShots
+
+![Pic 1](./assets/images/appPic.jpg)
+![Pic 2](./assets/images/scoresPic.jpg)
+![Pic 3](./assets/images/code.jpg)
