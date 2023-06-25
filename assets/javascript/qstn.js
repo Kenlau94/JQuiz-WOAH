@@ -1,3 +1,4 @@
+//my variables and values
 var score = 0;
 var container = document.querySelector("#container");
 var quizContent = document.querySelector("#quizContent");
@@ -5,6 +6,7 @@ var questionTitle = document.querySelector("#qTitle");
 var timer = document.querySelector("#timer");
 var startBtn = document.querySelector("#start");
 
+//setting up the questions array with 3properties (title,choices,answer)
 var questions = [
   {
     title: "The first index of an array is: ",
@@ -37,15 +39,20 @@ var questions = [
     answer: "YESS",
   },
 ];
+
+//?index=0
 var questionIndex = 0;
 
+//creating an unordered list and assigning it to createUl,  then it is given the id of "optionsUl"
 var createUl = document.createElement("ul");
 createUl.setAttribute("id", "optionsUl");
 
+//more var values
 var timeInterval = 0;
 var countdown = 75;
 var penalty = 10;
 
+//Sets the timer on click.      REVIEW THE TIMER!
 startBtn.addEventListener("click", function () {
   if (timeInterval === 0) {
     timeInterval = setInterval(function () {
@@ -85,7 +92,8 @@ var i = 0;
 var newDiv = document.createElement("div");
 var feedback = document.createElement("h3");
 newDiv.setAttribute("id", "newDiv");
-// checks to see if selected answer is correct & inserts feedback (correct/incorrect)
+
+// checks to see if selected answer is correct, then tell u correct||incorrect
 function checkAns(event) {
   var choice = event.target;
   quizContent.appendChild(newDiv);
@@ -94,7 +102,7 @@ function checkAns(event) {
   next.setAttribute("id", "nextButton");
   next.textContent = "Next Question";
 
-  // condition that selected answer is correct
+  // condition that answer is correct
   if (choice.textContent == questions[questionIndex].answer) {
     score++;
     feedback.textContent = "NICE! 😎";
@@ -102,14 +110,15 @@ function checkAns(event) {
 
     newDiv.appendChild(next);
     next.addEventListener("click", movingOn);
-    //condition that the selected answer is incorrect
+
+    //condition that answer is incorrect
   } else {
     countdown = countdown - penalty;
     feedback.textContent = "WOAH! 💀";
     newDiv.appendChild(feedback);
   }
 }
-// Decides whether to initiate final pages or to cycle through next question
+// Decides whether to go to final page or to go to next question
 function movingOn(event) {
   newDiv.innerHTML = "";
   questionIndex++;
@@ -123,6 +132,7 @@ function movingOn(event) {
 function theEnd() {
   quizContent.innerHTML = "";
   timer.innerHTML = "";
+
   // Sets up high score page
   var newH1 = document.createElement("h1");
   newH1.setAttribute("id", "newH1");
@@ -146,7 +156,7 @@ function theEnd() {
     quizContent.appendChild(newP);
   }
 
-  // Initials submission box and button
+  // Initials, submission box and button
   var initialsPrompt = document.createElement("label");
   initialsPrompt.setAttribute("for", "inputBox");
   initialsPrompt.textContent = "Enter your initials: ";
@@ -164,7 +174,7 @@ function theEnd() {
   submit.textContent = "Submit";
   quizContent.appendChild(submit);
 
-  // Event listener for submission button and storage initials and score
+  // Event listener for submission button and stores initials and score
   submit.addEventListener("click", function () {
     var initials = inputBox.value;
 
@@ -176,6 +186,7 @@ function theEnd() {
         initials: initials,
         score: score,
       };
+
       // Storage of past scores
       var storeScores = localStorage.getItem("storeScores");
       if (storeScores === null) {
