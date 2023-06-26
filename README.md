@@ -2,7 +2,7 @@
 
 ## Tasks
 
-This week we were tasked to create a functional coding quiz using javascript, html and css with only a couple days to finish the project. 🙃 The assignment was quite difficult for me but I had fun taking a creative approach and making a quiz that I will be glad to show my friends. I can read code fairly confidently but the hard part was figuring out what to plug in where; overall the project was difficult but rewarding. Started out with the html and css files but couldn't figure out how to start the javascript, but after lots of w3, youtube and reviewing previous lessons, I figured out how to proceed in javascript and learned that I need another html and javascript file for the scores. After hours of messing around with javascript, I present my end product. Hope you get that top score! 😎
+This week we were tasked to create a functional coding quiz using javascript, html and css with only a couple days to finish the project. 🙃 The assignment was quite difficult for me but I had fun taking a creative approach and making a quiz that I will be glad to show my friends. I can read code fairly confidently but the hard part was figuring out what to plug in where; overall the project was difficult but rewarding. Started out with the html and css files but couldn't figure out how to start the javascript, but after lots of w3, reviewing previous lessons and youtube to explain the lessons, I figured out how to proceed in javascript and learned that I need another html and javascript file for the scores. All while every hour, plugging in my code to chatGPT and asking if there are any errors in the code, made this achievable. After DAYS of messing around with javascript, I present my end product. Hope you get that top score! 😎
 
 ## Grading Requirements
 
@@ -65,3 +65,5 @@ You are required to submit BOTH of the following for review:
 ![Pic 1](./assets/images/appPic.jpg)
 ![Pic 2](./assets/images/scoresPic.jpg)
 ![Pic 3](./assets/images/code.jpg)
+
+## App

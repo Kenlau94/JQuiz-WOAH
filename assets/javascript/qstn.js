@@ -1,10 +1,18 @@
-//my variables and values
+//my variables and values (online shows that var is outdated and to use let but going by what im taught)
 var score = 0;
 var container = document.querySelector("#container");
 var quizContent = document.querySelector("#quizContent");
 var questionTitle = document.querySelector("#qTitle");
 var timer = document.querySelector("#timer");
 var startBtn = document.querySelector("#start");
+var questionIndex = 0;
+var timeInterval = 0;
+var countdown = 75;
+var penalty = 10;
+
+//creating an unordered list and assigning it to createUl,  then it is given the id of "optionsUl"
+var createUl = document.createElement("ul");
+createUl.setAttribute("id", "optionsUl");
 
 //setting up the questions array with 3properties (title,choices,answer)
 var questions = [
@@ -40,19 +48,7 @@ var questions = [
   },
 ];
 
-//?index=0
-var questionIndex = 0;
-
-//creating an unordered list and assigning it to createUl,  then it is given the id of "optionsUl"
-var createUl = document.createElement("ul");
-createUl.setAttribute("id", "optionsUl");
-
-//more var values
-var timeInterval = 0;
-var countdown = 75;
-var penalty = 10;
-
-//Sets the timer on click.      REVIEW THE TIMER!
+//Sets the timer on click.      REVIEW THE TIMER!  i struggled with timer and some functions
 startBtn.addEventListener("click", function () {
   if (timeInterval === 0) {
     timeInterval = setInterval(function () {
