@@ -6,7 +6,7 @@ var clearButton = document.querySelector("#clear");
 
 //adds an event listener for a click on the back button that then replaces the current window to quiz window
 backButton.addEventListener("click", function () {
-  window.location.replace("quiz.html");
+  window.location.replace("index.html");
 });
 
 //adds event listener for a click on the clear button that will then cause the function to clear the data
