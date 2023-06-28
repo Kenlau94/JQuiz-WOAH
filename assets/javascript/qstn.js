@@ -68,12 +68,9 @@ function newQuestion(questionIndex) {
   quizContent.innerHTML = "";
   createUl.innerHTML = "";
   var displayQuestion = document.createElement("h2");
-
-  for (var i = 0; i < questions.length; i++) {
-    displayQuestion.innerHTML = questions[questionIndex].title;
-    var displayChoices = questions[questionIndex].choices;
-    quizContent.appendChild(displayQuestion);
-  }
+  displayQuestion.innerHTML = questions[questionIndex].title;
+  var displayChoices = questions[questionIndex].choices;
+  quizContent.appendChild(displayQuestion);
   console.log(displayChoices);
   displayChoices.forEach(function (newItem) {
     var listItem = document.createElement("li");
@@ -170,30 +167,24 @@ function theEnd() {
   submit.textContent = "Submit";
   quizContent.appendChild(submit);
 
-  // Event listener for submission button and stores initials and score
+  //set up the scores, saved to localStorage
   submit.addEventListener("click", function () {
-    var initials = inputBox.value;
+    var initials = inputBox.value.trim();
 
     if (initials === "") {
       console.log("No initials entered");
       window.alert("Please enter your initials");
-    } else {
-      var finalScore = {
-        initials: initials,
-        score: score,
-      };
-
-      // Storage of past scores
-      var storeScores = localStorage.getItem("storeScores");
-      if (storeScores === null) {
-        storeScores = [];
-      } else {
-        storeScores = JSON.parse(storeScores);
-      }
-      storeScores.push(finalScore);
-      var newScore = JSON.stringify(storeScores);
-      localStorage.setItem("storeScores", newScore);
-      window.location.replace("scores.html");
+      return;
     }
+
+    var finalScore = {
+      initials: initials,
+      score: score,
+    };
+
+    var storeScores = JSON.parse(localStorage.getItem("storeScores")) || [];
+    storeScores.push(finalScore);
+    localStorage.setItem("storeScores", JSON.stringify(storeScores));
+    window.location.replace("scores.html");
   });
 }

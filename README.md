@@ -67,3 +67,5 @@ You are required to submit BOTH of the following for review:
 ![Pic 3](./assets/images/code.jpg)
 
 ## App
+
+[Deployed App](https://kenlau94.github.io/JQuiz-WOAH/)
